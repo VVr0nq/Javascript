@@ -3,37 +3,41 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Slider/karuzela</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="slider">
-        <div class="slides">
-        	<img src="http://picsum.photos/seed/picsum/600/400" alt="">
-        	<img src="http://picsum.photos/seed/picsum/600/400" alt="">
-        	<img src="http://picsum.photos/seed/picsum/600/400" alt="">
-        	<img src="http://picsum.photos/seed/picsum/600/400" alt="">
-        	<img src="http://picsum.photos/seed/picsum/600/400" alt="">
-        	<img src="http://picsum.photos/seed/picsum/600/400" alt="">
+    <div class="container">
+        <div class="slide fade">
+            <img src="http://picsum.photos/seed/picsum/600/400" onclick="openModal();currentSlide(1)" class="hover-shadow" alt="">
         </div>
+
+        <div class="slide fade">
+            <img src="http://picsum.photos/seed/picsum/600/400" onclick="openModal();currentSlide(2)" class="hover-shadow" alt="">
+        </div>
+
+        <div class="slide fade">
+            <img src="http://picsum.photos/seed/picsum/600/400" onclick="openModal();currentSlide(3)" class="hover-shadow" alt="">
+        </div>
+
+        <div class="slide fade">
+            <img src="http://picsum.photos/seed/picsum/600/400" onclick="openModal();currentSlide(4)" class="hover-shadow" alt="">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-    <div class="w3-center">
-        <button class="w3-button" onclick="plusDivs(-1)">&#10094; Prev</button>
-        <button class="w3-button" onclick="plusDivs(1)">Next &#10095;</button>
-      
-        <button class="w3-button demo" onclick="nextSlide(1)">1</button>
-        <button class="w3-button demo" onclick="nextSlide(2)">2</button>
-        <button class="w3-button demo" onclick="nextSlide(3)">3</button>
-        <button class="w3-button demo" onclick="nextSlide(4)">4</button>
-        <button class="w3-button demo" onclick="nextSlide(5)">5</button>
-        <button class="w3-button demo" onclick="nextSlide(6)">6</button>
-      </div>
-    <main>
-    </main>
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
     <script src="main.js"></script>
 </body>
 
 </html>
-//

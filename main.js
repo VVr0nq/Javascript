@@ -1,36 +1,45 @@
-// notatnik z zajęć
+var myInterval = setInterval(showSlidesInterval,2000);
+let slideIndex = 1;
+showSlides(slideIndex);
 
-const main = document.querySelector('main')
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+  clearInterval(setTimeout(showSlidesInterval, 2000));
+}
 
-//zmiana styli css elementu
-main.style.transform = "translateX(-10px)"
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+  clearInterval(setTimeout(showSlidesInterval, 2000));
+}
 
-//zmiana klasy css elementu
-main.classList.add() // .remove(), . toggle()
+function pause() {
+  clearInterval(myInterval)
+}
 
-// jednorazowe wykonanie kodu po określonym czasie
-const timeoutRef = setTimeout(
-    () => {
-        main.innerHTML = 'Msg from setTimeout'
-    },
-    2000
-)
+function resume() {
+  myInterval = setInterval(showSlidesInterval,2000);
+}
 
-// wykonywanie kodu co określony czas
-let licznik = 0
-const intervalRef = setInterval(
-    () => {
-        main.innerHTML = `Msg from setInterval: ${licznik++}`
-    },
-    4000
-)
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
 
-
-// kasujemy setInterval
-// clearInterval(intervalRef)
-
-// kasujemy setTimeout
-// clearTimeout(intervalRef)
-//
-
-// window.requestAnimationFrame
+function showSlidesInterval() {
+  showSlides((slideIndex += 1));
+}
