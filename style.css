@@ -3,6 +3,7 @@
     height: 400px;
     margin: 100px auto 0 auto;
     overflow: hidden;
+    position: relative;
 }
 #slider .slides {
     display: flex;
@@ -11,7 +12,7 @@
     animation-delay: 1s;
     animation-timing-function: ease-in-out;
 }
-.button {
+button {
     text-align: center;
 }
 

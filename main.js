@@ -31,6 +31,6 @@ const intervalRef = setInterval(
 
 // kasujemy setTimeout
 // clearTimeout(intervalRef)
-
+//
 
 // window.requestAnimationFrame
